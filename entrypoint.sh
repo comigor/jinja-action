@@ -15,7 +15,7 @@ echo 'Templating Start'
 
 if [[ $1 != 'None' ]];
 then
-  dir=`ls $3`
+  dir=`find $3`
 
   for eachfile in $dir;
   do
@@ -32,7 +32,7 @@ fi
 
 if [[ $2 != 'None' ]];
 then
-  dir=`ls $3`
+  dir=`find $3`
   for eachfile in $dir;
   do
      jinja2 --strict $eachfile $2 --format json > "${eachfile}_"
